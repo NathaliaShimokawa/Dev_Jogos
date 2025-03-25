@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text scoreText;
     [SerializeField] private Text livesText;
 
-    private Player player;
-    private Enemy[] enemies;
+    private PlayerBehaviour player;
+    private EnemyBehaviour[] enemies;
 
     public int score { get; private set; } = 0;
     public int lives { get; private set; } = 3;
@@ -39,21 +39,24 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        player = Object.FindFirstObjectByType<Player>();  // Encontra o player
-        enemies = Object.FindObjectsByType<Enemy>(FindObjectsSortMode.None);  // Encontra todos os inimigos
+        player = Object.FindFirstObjectByType<PlayerBehaviour>();
+        enemies = Object.FindObjectsByType<EnemyBehaviour>(FindObjectsSortMode.None);
+
+        if (player == null)
+        {
+            Debug.LogError("PlayerBehaviour não encontrado na cena!");
+        }
 
         NewGame();
     }
 
     private void Update()
     {
-        // Verifica se o número de vidas é menor ou igual a 0 e o jogador pressionou Enter para reiniciar o jogo
         if (lives <= 0 && Input.GetKeyDown(KeyCode.Return))
         {
             NewGame();
         }
 
-        // Verifica se a pontuação atingiu 20, e então chama o método para vencer o jogo
         if (score >= 20)
         {
             OnGameWon();
@@ -63,7 +66,6 @@ public class GameManager : MonoBehaviour
     private void NewGame()
     {
         gameOverUI.SetActive(false);
-
         SetScore(0);
         SetLives(3);
         NewRound();
@@ -71,9 +73,9 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
-        foreach (Enemy enemy in enemies)
+        foreach (EnemyBehaviour enemy in enemies)
         {
-            enemy.ResetEnemy();  // Reseta os inimigos (ajuste necessário para a função de reset no Enemy)
+            enemy.ResetEnemy();
             enemy.gameObject.SetActive(true);
         }
 
@@ -82,19 +84,22 @@ public class GameManager : MonoBehaviour
 
     private void Respawn()
     {
-        Vector3 position = player.transform.position;
-        position.x = 0f;
-        player.transform.position = position;
-        player.gameObject.SetActive(true);
+        if (player != null)
+        {
+            Vector3 position = player.transform.position;
+            position.x = 0f;
+            player.transform.position = position;
+            player.gameObject.SetActive(true);
+        }
     }
 
     private void GameOver()
     {
-        foreach (Enemy enemy in enemies)
+        foreach (EnemyBehaviour enemy in enemies)
         {
-            enemy.gameObject.SetActive(false);  // Desativa os inimigos quando o jogo termina
+            enemy.gameObject.SetActive(false);
         }
-        SceneManager.LoadScene("Lose_Game");  // Carrega a cena de Game Over
+        SceneManager.LoadScene("Lose_Game");
     }
 
     private void SetScore(int score)
@@ -109,31 +114,28 @@ public class GameManager : MonoBehaviour
         livesText.text = this.lives.ToString();
     }
 
-    public void OnPlayerKilled(Player player)
+    public void OnPlayerKilled(PlayerBehaviour player)
     {
         SetLives(lives - 1);
-
         player.gameObject.SetActive(false);
 
         if (lives > 0)
         {
-            Invoke(nameof(NewRound), 1f);  // Inicia uma nova rodada se ainda tiver vidas
+            Invoke(nameof(NewRound), 1f);
         }
         else
         {
-            GameOver();  // Se o jogador não tiver mais vidas, vai para o Game Over
+            GameOver();
         }
     }
 
-    public void OnEnemyKilled(Enemy enemy)
+    public void OnEnemyKilled(EnemyBehaviour enemy)
     {
-        enemy.gameObject.SetActive(false);  // Desativa o inimigo
+        enemy.gameObject.SetActive(false);
+        SetScore(score + 1);
 
-        SetScore(score + 1);  // Aumenta a pontuação por matar um inimigo
-
-        // Verifica se todos os inimigos foram destruídos
         bool allEnemiesKilled = true;
-        foreach (Enemy e in enemies)
+        foreach (EnemyBehaviour e in enemies)
         {
             if (e.gameObject.activeSelf)
             {
@@ -144,18 +146,17 @@ public class GameManager : MonoBehaviour
 
         if (allEnemiesKilled)
         {
-            NewRound();  // Começa uma nova rodada se todos os inimigos forem destruídos
+            NewRound();
         }
     }
 
-    // Modificado para verificar a colisão do inimigo com o jogador
     public void OnEnemyCollidedWithPlayer()
     {
-        GameOver();  // Chama o Game Over quando um inimigo colide com o jogador
+        GameOver();
     }
 
     public void OnGameWon()
     {
-        SceneManager.LoadScene("Win_Game");  // Carrega a cena de Vitória
+        SceneManager.LoadScene("Win_Game");
     }
 }

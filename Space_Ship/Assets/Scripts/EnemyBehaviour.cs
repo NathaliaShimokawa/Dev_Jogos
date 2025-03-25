@@ -54,4 +54,11 @@ public class EnemyBehaviour : MonoBehaviour {
             }
         }
     }
+    public void ResetEnemy()
+{
+    xRandom = Random.Range(-yMax, yMax);
+    transform.position = new Vector3(xMax, xRandom, 0); // Reposiciona o inimigo no lado direito
+    gameObject.SetActive(true); // Garante que o inimigo esteja ativo
+}
+
 }
