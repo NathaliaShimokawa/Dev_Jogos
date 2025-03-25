@@ -100,6 +100,10 @@ public class GameManager : MonoBehaviour
 
     private void SetScore(int score)
     {
+        if(this.score == 10){
+            OnGameWon();
+        }
+
         this.score = score;
         scoreText.text = score.ToString().PadLeft(4, '0');
     }
@@ -144,4 +148,16 @@ public class GameManager : MonoBehaviour
         // Carrega a cena de "Win_Game" quando o jogador atingir o score 20
         SceneManager.LoadScene("Win_Game");
     }
+
+    public void InitGame()
+    {
+        // Carrega a cena de "Win_Game" quando o jogador atingir o score 20
+        SceneManager.LoadScene("Game");
+    }
+    public void InitMenu()
+    {
+        // Carrega a cena de "Win_Game" quando o jogador atingir o score 20
+        SceneManager.LoadScene("Menu");
+    }
+
 }

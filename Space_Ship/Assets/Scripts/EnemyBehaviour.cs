@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class EnemyBehaviour : MonoBehaviour {
 
@@ -40,6 +41,7 @@ public class EnemyBehaviour : MonoBehaviour {
             // Chama a função OnEnemyCollidedWithPlayer do GameManager para terminar o jogo
             if (gameManager != null) {
                 gameManager.OnEnemyCollidedWithPlayer();  // Termina o jogo
+                StartCoroutine(WaitAndInitMenu()); // Espera 2 segundos antes de chamar o menu
             }
         }
 
@@ -54,11 +56,17 @@ public class EnemyBehaviour : MonoBehaviour {
             }
         }
     }
-    public void ResetEnemy()
-{
-    xRandom = Random.Range(-yMax, yMax);
-    transform.position = new Vector3(xMax, xRandom, 0); // Reposiciona o inimigo no lado direito
-    gameObject.SetActive(true); // Garante que o inimigo esteja ativo
-}
 
+    public void ResetEnemy()
+    {
+        xRandom = Random.Range(-yMax, yMax);
+        transform.position = new Vector3(xMax, xRandom, 0); // Reposiciona o inimigo no lado direito
+        gameObject.SetActive(true); // Garante que o inimigo esteja ativo
+    }
+
+    private IEnumerator WaitAndInitMenu()
+    {
+        yield return new WaitForSeconds(2f); // Aguarda 2 segundos
+        gameManager.InitMenu(); // Inicia o menu após a pausa
+    }
 }
