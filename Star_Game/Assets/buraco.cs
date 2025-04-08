@@ -6,7 +6,7 @@ public class Buraco : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("derrota");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Lose_Game");
         }
     }
 }
