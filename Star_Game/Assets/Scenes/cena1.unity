@@ -1667,8 +1667,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 80}
-  m_SizeDelta: {x: 90, y: 20}
+  m_AnchoredPosition: {x: 170, y: -20}
+  m_SizeDelta: {x: 90.4517, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &690817105
 PrefabInstance:
@@ -2478,7 +2478,7 @@ MonoBehaviour:
   estrelaText: {fileID: 630246801}
   vidasText: {fileID: 343457400}
   estrelas: 0
-  vidas: 0
+  vidas: 3
 --- !u!4 &1224257087
 Transform:
   m_ObjectHideFlags: 0

@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("derrota");
         }
     }
-    if (collision.gameObject.tag == "saida" && gcPlayer.estrelas == 12)
+    if (collision.gameObject.tag == "saida" && gcPlayer.estrelas >= 12)
     {
         SceneManager.LoadScene("Cena2");
         Debug.Log("Sua mensagem aqui" + gcPlayer.estrelas);
