@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Carnes
   - Estrelas
+  - saida
   layers:
   - Default
   - TransparentFX

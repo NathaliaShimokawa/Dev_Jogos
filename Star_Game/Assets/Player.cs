@@ -67,22 +67,30 @@ public class Player : MonoBehaviour
             inFloor = true;
         }
     }
-    
-    private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.gameObject.tag == "Estrelas"){
-            Destroy(collision.gameObject);
-            gcPlayer.estrelas++;
-            gcPlayer.estrelaText.text = gcPlayer.estrelas.ToString();
-        } else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            gcPlayer.vidas--;
-            gcPlayer.vidasText.text = gcPlayer.vidas.ToString();
-            Destroy(collision.gameObject);
+    private void OnTriggerEnter2D(Collider2D collision)
+{
+    if (collision.gameObject.tag == "Estrelas")
+    {
+        Destroy(collision.gameObject);
+        gcPlayer.estrelas++;
+        gcPlayer.estrelaText.text = gcPlayer.estrelas.ToString();
+    }
+    else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+    {
+        gcPlayer.vidas--;
+        gcPlayer.vidasText.text = gcPlayer.vidas.ToString();
+        Destroy(collision.gameObject);
 
-            if (gcPlayer.vidas <= 0)
-            {
-                SceneManager.LoadScene("derrota");
-            }
+        if (gcPlayer.vidas <= 0)
+        {
+            SceneManager.LoadScene("derrota");
         }
     }
+    if (collision.gameObject.tag == "saida" && gcPlayer.estrelas == 12)
+    {
+        SceneManager.LoadScene("Cena2");
+        Debug.Log("Sua mensagem aqui" + gcPlayer.estrelas);
+
+    }
+}
 }
