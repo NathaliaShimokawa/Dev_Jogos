@@ -22,7 +22,7 @@ public class Transicao : MonoBehaviour
             }
             if (scene.name == "cena2")
             {
-                SceneManager.LoadScene("Win");
+                SceneManager.LoadScene("Win_Game");
             }
         }
     }
