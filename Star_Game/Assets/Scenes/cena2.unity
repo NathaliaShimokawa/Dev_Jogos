@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 345336037}
   - component: {fileID: 345336036}
   m_Layer: 8
-  m_Name: passaro
+  m_Name: alien
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -586,8 +586,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 23.43, y: 15.925078}
-    newSize: {x: 23.43, y: 15.925078}
+    oldSize: {x: 2.76, y: 1.88}
+    newSize: {x: 2.76, y: 1.88}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -664,13 +664,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f80352eeffec06348a63c09ad75a4fc3, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -4370408441715835635, guid: 153db9be1f88ce64395634f5dc1bf386, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 23.43, y: 15.925078}
+  m_Size: {x: 2.76, y: 1.88}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -685,8 +685,8 @@ Transform:
   m_GameObject: {fileID: 345336035}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.15, y: 0.59, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_LocalPosition: {x: 8.7683, y: 1.0705, z: 0}
+  m_LocalScale: {x: 0.47801828, y: 0.5410781, z: 0.03}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -2482,7 +2482,7 @@ GameObject:
   - component: {fileID: 1164458715}
   - component: {fileID: 1164458714}
   m_Layer: 8
-  m_Name: passaro (1)
+  m_Name: alien (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2544,8 +2544,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 23.43, y: 15.925078}
-    newSize: {x: 23.43, y: 15.925078}
+    oldSize: {x: 2.76, y: 1.88}
+    newSize: {x: 2.76, y: 1.88}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -2622,13 +2622,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f80352eeffec06348a63c09ad75a4fc3, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -4370408441715835635, guid: 153db9be1f88ce64395634f5dc1bf386, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 23.43, y: 15.925078}
+  m_Size: {x: 2.76, y: 1.88}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2643,8 +2643,8 @@ Transform:
   m_GameObject: {fileID: 1164458713}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.54, y: 3.47, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_LocalPosition: {x: 16.2664, y: 4.0094, z: 0}
+  m_LocalScale: {x: 0.55641615, y: 0.6038271, z: 0.03}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -4513,7 +4513,7 @@ GameObject:
   - component: {fileID: 1427063375}
   - component: {fileID: 1427063374}
   m_Layer: 8
-  m_Name: passaro (2)
+  m_Name: alien (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4575,8 +4575,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 23.43, y: 15.925078}
-    newSize: {x: 23.43, y: 15.925078}
+    oldSize: {x: 2.76, y: 1.88}
+    newSize: {x: 2.76, y: 1.88}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -4654,12 +4654,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f80352eeffec06348a63c09ad75a4fc3, type: 3}
+  m_Sprite: {fileID: -4370408441715835635, guid: 153db9be1f88ce64395634f5dc1bf386, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 23.43, y: 15.925078}
+  m_Size: {x: 2.76, y: 1.88}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4674,8 +4674,8 @@ Transform:
   m_GameObject: {fileID: 1427063373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.19, y: 3.43, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_LocalPosition: {x: 28.6537, y: 3.8211, z: 0}
+  m_LocalScale: {x: 0.36601955, y: 0.44605756, z: 0.03}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
